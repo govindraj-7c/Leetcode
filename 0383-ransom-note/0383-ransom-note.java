@@ -1,19 +1,20 @@
 class Solution {
     public boolean canConstruct(String r, String m) {
-        int[] mCount = new int[26];
+        HashMap<Character, Integer> map = new HashMap<>();
 
-        for(int i=0; i<m.length(); i++){
-            mCount[m.charAt(i)-'a']++;
+        for(char ch : m.toCharArray()){
+            map.put(ch, map.getOrDefault(ch,0)+1);
         }
 
-        for(int i=0; i<r.length(); i++){
-            if(mCount[r.charAt(i)-'a'] > 0){
-                mCount[r.charAt(i)-'a']--;
+        for(char ch : r.toCharArray()){
+            if(map.containsKey(ch) && map.get(ch) > 0){
+                map.put(ch, map.get(ch)-1);
             }
             else{
                 return false;
             }
         }
+
         return true;
     }
 }
