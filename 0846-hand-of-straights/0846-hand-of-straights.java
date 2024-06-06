@@ -4,7 +4,7 @@ class Solution {
             return false;
         }
 
-        Map<Integer, Integer> cardCount = new TreeMap<>();
+        HashMap<Integer, Integer> cardCount = new HashMap<>();
         for (int card : hand) {
             cardCount.put(card, cardCount.getOrDefault(card, 0) + 1);
         }
