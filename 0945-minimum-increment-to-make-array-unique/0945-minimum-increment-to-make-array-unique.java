@@ -7,7 +7,7 @@ class Solution {
         // for(int no : nums){
         //     max = Math.max(max, no);
         // }
-        boolean[] arr = new boolean[100002];
+        boolean[] arr = new boolean[1000001];
 
         for(int i=0; i<n; i++){
             int ele = nums[i];
