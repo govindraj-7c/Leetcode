@@ -3,6 +3,7 @@ class Solution {
         int n = p.length;
         int[][] arr = new int[n][2];
         int totalProfit = 0;
+        Arrays.sort(w);
 
         for(int i=0; i<d.length; i++){
             arr[i][0] = d[i];
@@ -10,8 +11,6 @@ class Solution {
         }
 
         Arrays.sort(arr, (a,b) -> a[0] - b[0]);
-
-        // PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
         for(int i=0; i<w.length; i++){
             int j=0;
