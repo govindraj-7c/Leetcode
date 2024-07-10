@@ -3,11 +3,11 @@ class Solution {
         int count = 0;
 
         for(String str : logs){
-            if(!str.equals("../") && !str.equals("./")){
-                count++;
+            if(str.equals("../")){
+                if(count > 0 ) count--;
             }
-            else if(str.equals("../") && count != 0){
-                count--;
+            else if(!str.equals("./")){
+                count++;
             }
         }
 
